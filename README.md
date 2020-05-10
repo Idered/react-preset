@@ -1,6 +1,30 @@
-# React Preset
+<h1 align="center">React Preset</h1>
+<p align="center">
+  <img  alt="npm" src="https://img.shields.io/npm/v/react-preset?color=blue" />
+  <img
+    alt="npm bundle size"
+    src="https://img.shields.io/bundlephobia/min/react-preset"
+  />
+  <img
+    alt="CI"
+    src="https://github.com/Idered/react-preset/workflows/CI/badge.svg?event=push"
+  />
+  <img
+    alt="Gitter"
+    src="https://img.shields.io/gitter/room/Idered/react-preset"
+  />
+</p>
+<p align="center">Smash your props into single `preset` prop.<p>
+<p align="center">
+  <a href="https://codesandbox.io/s/react-preset-tphq6"
+    ><img
+      alt="Edit react-preset"
+      src="https://codesandbox.io/static/img/play-codesandbox.svg"
+  /></a>
+<p>
 
-> Smash your props into single `preset` prop.
+
+
 
 ![](.github/example.png)
 
