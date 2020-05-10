@@ -14,8 +14,11 @@ npm install react-preset
 ```tsx
 // preset.tsx
 const preset = {
+  // Preset group name
   button: {
+    // Single preset
     save: {
+      // These props should be handled by component
       children: 'Save',
       appearance: 'primary'
     },
