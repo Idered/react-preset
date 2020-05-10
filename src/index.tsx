@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ComponentType } from 'react';
+import * as React from 'react';
 
 /**
  * Default preset interface. Can be extended using declaration merging.
@@ -9,23 +9,30 @@ import React, { createContext, useContext, ComponentType } from 'react';
  * }
  */
 export interface DefaultPreset {}
-export const PresetContext = createContext<DefaultPreset>({});
+export const PresetContext = React.createContext<DefaultPreset>({});
 export function usePreset() {
-  return useContext(PresetContext);
+  return React.useContext(PresetContext);
 }
-export function withPreset<T extends keyof DefaultPreset>(group: T) {
-  return <TOriginalProps extends {}>(
-    Component: ComponentType<TOriginalProps>
-  ) => {
-    type ResultProps = TOriginalProps & { preset?: keyof DefaultPreset[T] };
-    const WithPreset = ({ preset, ...props }: ResultProps) => {
+export type WithPresetProps<T extends keyof DefaultPreset> = {
+  preset?: keyof DefaultPreset[T];
+};
+export function withPreset<
+  T extends keyof DefaultPreset,
+  P extends WithPresetProps<T>
+>(group: T) {
+  return <OriginalProps extends {}>(
+    ComposedComponent: React.ComponentType<OriginalProps>
+  ): React.ComponentType<OriginalProps & P> => {
+    function WithPresetWrapper(props: any) {
+      const { preset, ...rest } = props;
       const presets = usePreset();
       const propsWithPresets = {
-        ...((preset ? presets?.[group]?.[preset] : {}) as TOriginalProps),
-        ...props,
+        ...((preset ? presets?.[group]?.[preset] : {}) as P),
+        ...rest,
       };
-      return <Component {...propsWithPresets} />;
-    };
-    return WithPreset;
+      return <ComposedComponent {...propsWithPresets} />;
+    }
+
+    return WithPresetWrapper;
   };
 }
