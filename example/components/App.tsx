@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PresetContext } from '../../src';
+import { PresetContext } from '../../dist';
 import Button from './Button';
 import preset from '../preset';
 

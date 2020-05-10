@@ -13,7 +13,7 @@ const preset = {
   },
 };
 
-declare module '../src' {
+declare module '../dist' {
   export interface DefaultPreset extends Required<typeof preset> {}
 }
 
