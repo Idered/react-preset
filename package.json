@@ -2,6 +2,7 @@
   "name": "react-preset",
   "author": "Kasper Mikiewicz",
   "module": "dist/react-preset.esm.js",
+  "description": "Smash your props into single preset prop",
   "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
@@ -10,6 +11,19 @@
     "dist",
     "src"
   ],
+  "keywords": [
+    "react",
+    "props",
+    "preset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idered/react-preset.git"
+  },
+  "homepage": "https://github.com/idered/react-preset#readme",
+  "bugs": {
+    "url": "https://github.com/idered/react-preset/issues"
+  },
   "engines": {
     "node": ">=10"
   },
