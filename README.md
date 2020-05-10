@@ -9,10 +9,6 @@
     alt="CI"
     src="https://github.com/Idered/react-preset/workflows/CI/badge.svg?event=push"
   />
-  <img
-    alt="Gitter"
-    src="https://img.shields.io/gitter/room/Idered/react-preset"
-  />
 </p>
 <p align="center">Smash your props into single `preset` prop.<p>
 <p align="center">
@@ -22,9 +18,6 @@
       src="https://codesandbox.io/static/img/play-codesandbox.svg"
   /></a>
 <p>
-
-
-
 
 ![](.github/example.png)
 
