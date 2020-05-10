@@ -10,8 +10,10 @@ import React, { createContext, useContext, ComponentType } from 'react';
  */
 export interface DefaultPreset {}
 export const PresetContext = createContext<DefaultPreset>({});
-export const usePreset = () => useContext(PresetContext);
-export const withPreset = <T extends keyof DefaultPreset>(group: T) => {
+export function usePreset() {
+  return useContext(PresetContext);
+}
+export function withPreset<T extends keyof DefaultPreset>(group: T) {
   return <TOriginalProps extends {}>(
     Component: ComponentType<TOriginalProps>
   ) => {
@@ -26,4 +28,4 @@ export const withPreset = <T extends keyof DefaultPreset>(group: T) => {
     };
     return WithPreset;
   };
-};
+}
